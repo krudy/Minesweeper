@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const flagsLeft = document.querySelector('#flags-left');
     const width = 10;
     let bombAmount = 20;
+    const squares = [];
 
     console.log(grid);
     
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             square.id = i;
             square.classList.add(shuffledArray[i]);
             grid.appendChild(square);
+            squares.push(square);
         }
     }
     createBoard();
