@@ -35,3 +35,27 @@
     box-sizing: border-box;
 
 }
+
+.one {
+    color: darkblue;
+}
+
+.two {
+    color: darkred;
+}
+
+.three {
+    color: darkgreen;
+}
+
+.four {
+    color: darkorange;
+}   
+
+.five {
+    color: rgb(137, 0, 139);
+}
+
+.six {
+    color: rgb(255, 255, 0);
+}
