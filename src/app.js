@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
 
             //cntrl and left click
-            square.addEventListener('click', function () {
+            square.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
                 addFlag(square);
             })
         }
@@ -67,14 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
     //add flag
     function addFlag(square) {
         if (isGameOver) return;
-        if (!square.classlist.contains('checked') && (flags < bombAmount)) {
-            if (!square.classlist.contains('flagged')) {
+        if (!square.classList.contains('checked') && (flags < bombAmount)) {
+            if (!square.classList.contains('flagged')) {
 
                 square.classList.add("flagged");
                 flags++;
-                flagsLeft.innerHTML = '🚩';
+                square.innerHTML = '🚩';
                 flagsLeft.innerHTML = bombAmount - flags;
-                checkWin();
+                checkForWin();
             } else {
                 square.classList.remove('flagged');
                 flags--;
@@ -159,6 +160,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 10)
     }
 
+    function checkForWin () {
+        let matches = 0;
+
+        for (let i = 0; i < squares.length; i++) {
+            if(squares[i].classList.contains('flagged') && squares[i].classList.contains('bomb')) {
+                matches++;
+            }
+            if (matches === bombAmount) {
+                result.innerHTML = 'YOU WIN !!!';
+                isGameOver = true;
+            }
+        }
+    }
 
     function gameOver() {
         result.innerHTML = 'Booooom! GAME OVER';
