@@ -1,5 +1,5 @@
 body {
-  background-image: url("../public/minefield.jpeg");
+  background-image: url("../public/img/minefield.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -12,6 +12,7 @@ body {
   font-size: 110px;
   text-align: center;
   margin-top: 10px;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9);
 }
 
 #counter {
@@ -21,6 +22,7 @@ body {
   font-style: normal;
   font-size: 110px;
   text-align: center;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9);
 }
 
 .container {
